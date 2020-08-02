@@ -19,5 +19,5 @@ Here is a simple calendar application that allows the user to save events for ea
 https://aliciagorton.github.io/homeworkfive/
 
 
-<!-- Add image of completed schedule -->
+<img width="1882" alt="WorkDayScheduler" src="https://user-images.githubusercontent.com/66084311/89134630-552a8e00-d4db-11ea-9ee1-00317b8cb878.png">
 

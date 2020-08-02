@@ -7,21 +7,21 @@ $(document).ready(function(){
 
     // color change depending on time  
     $(".time-block").each(function(index){
-        let id = ($(this).attr("id"));
+        let id = $(this).attr("id");
         
         let hour = parseInt($(this).attr("data-hour"));
-        console.log(`id: ${id}, current: ${current}`);
+        console.log(`id: ${id}, current: ${current}, hour: ${hour}`);
 
         if(current > hour) {
-            $(this).addClass(".past")
+            $(this).find("textarea").addClass("past")
             console.log("Have a good morning!")
         }
         else if (current === hour) {
-            $(this).addClass(".present")
+            $(this).find("textarea").addClass("present")
             console.log("Current time")
         }
         else {
-            $(this).addClass(".future")
+            $(this).find("textarea").addClass("future")
             console.log("Have a night")
         }
 
@@ -41,16 +41,9 @@ $(document).ready(function(){
 })
 
 $(".saveBtn").on("click", function(){
-
     var userData = $(this).siblings("textarea").val().trim();
-    console.log(`userData: ${userData}`);
-
     var timeBlock = $(this).parent().attr("id");
-    console.log(`timeBlock: ${timeBlock}`);
-
-    console.log(userData,timeBlock)
-    localStorage.setItem(timeBlock, userData)
-    
+    localStorage.setItem(timeBlock, userData);   
 })
 
 var currentTime = moment().hour()
